@@ -107,7 +107,7 @@ end
 class FederationLogger < ActiveSupport::BufferedLogger
 end
 
-if Rails.env.match(/integration/)
+if Rails.env.match(/production/)
   puts "using federation logger"
   logfile = File.open(Rails.root.join("log", "federation_logger.log"), 'a')  #create log file
   logfile.sync = true  #automatically flushes data to file
